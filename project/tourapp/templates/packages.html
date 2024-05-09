@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view packages</title>
+    <style>
+        nav
+      {
+    background-color: black;
+    padding:1rem;
+    color: white;
+    text-decoration: none;
+     }
+nav ul{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    display:flex;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+} 
+nav a{
+    color:white;
+    text-decoration: none;
+    font-size: irem;
+
+}
+nav li{
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+    
+}
+ </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home'%}">Home</a></li>
+                <li><a href="{%url 'vendor_logout'%}">Logout</a></li>
+            </ul>
+        </nav>
+                
+    </header>           
+    
+    {% for i in package%}
+     {% if i.approved%}
+     
+       
+     
+
+    
+
+        <h2>{{i.location}}</h2>
+        <img src="{{MEDIA_URL}}{{i.image.url}} "width=500 height=150>
+         <p>{{i.shortdescription}}</p>
+         <p>{{i.price}}
+         <p>{{i.start_date}}
+         <p>{{i.end_date}}</p>
+    
+       
+         <p>{{i.fulldescription}}</p>
+      
+       <ul>
+        <li>Approved:{{i.approved}}</li>
+       </ul>
+        <a href="{% url 'editt' i.pk%}">Edit</a>
+        <form action="{% url 'delte' i.pk%}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+       </form>
+     
+     {% endif %}   
+      
+    {% endfor %}
+      
+    
+
+    
+    
+</body>
+</html>

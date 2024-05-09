@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        nav
+{
+    background-color: black;
+    padding:1rem;
+    color: white;
+    text-decoration: none;
+}
+nav ul{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    display:flex;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+    
+}
+nav a{
+    color:white;
+    text-decoration: none;
+    font-size: irem;
+
+}
+nav li{
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+    
+}
+    </style>
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="{%url 'Index'%}">Home</a></li>
+                <li><a href="{%url 'login'%}">User Login</a></li>
+                <li><a href="{%url 'tour'%}">Tour Packages</li></a>
+            </ul>
+            </nav>
+            </header>
+
+
+    {% for i in tour_packages%}
+
+    
+   <p>Location:{{i.location}}</p> 
+   <p>Price:{{i.price}}</p>
+   <img src="{{i.image.url}}">
+   <p>Start Date:{{i.start_date}}</p>
+   <p>End Date:{{i.end_date}}</p>
+   <p>{{i.shortdescription}}</p>
+   <p>{{i.fulldescriptiom}}</p>
+   {%endfor%}
+
+   
+</body>
+</html>

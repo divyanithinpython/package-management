@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking List</title>
+    <style>
+        body{
+            background-image: url('/static/gal/go.jpg');
+            background-repeat: no-repeat;
+            background-size:  50% 50%;
+
+            
+            background-position:center;
+        }
+        
+       nav a{
+    color:white;
+    text-decoration: none;
+    font-size: irem;
+
+}
+nav li{
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+    
+}
+nav
+{
+    background-color: black;
+    padding:1rem;
+    color: white;
+    text-decoration: none;
+}
+nav ul{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    display:flex;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'Index'%}">Home</a></li>
+                <li><a href="{% url 'uslogout'%}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <h1>Booking Confirmed</h1>
+    <p>Details has been sent to you Email</p>
+    <p>We will Contact YOU </p>
+    <p>Thank you</p>
+    
+    
+    
+    
+        
+
+    
+
+    
+    
+    
+</body>
+</html>

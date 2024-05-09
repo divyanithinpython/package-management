@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking list</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        table {
+            border: 1px solid;
+        }
+       table tr td,table th,tr{
+             border :1px solid;
+       }
+         
+     nav
+      {
+    background-color: black;
+    padding:1rem;
+    color: white;
+    text-decoration: none;
+     }
+nav ul{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    display:flex;
+    justify-content: space-around;
+    text-decoration: none;
+    color: white;
+} 
+nav a{
+    color:white;
+    text-decoration: none;
+    font-size: irem;
+
+}
+nav li{
+    text-decoration: none;
+    color: white;
+    list-style-type: none;
+    
+}
+ </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home'%}">Home</a></li>
+                <li><a href="{%url 'vendor_logout'%}">Logout</a></li>
+            </ul>
+        </nav>
+                
+    </header>           
+    <h1>Tour Booking List</h1>
+    <center>
+    <table>
+
+        
+        <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Destination</th>
+        </tr>
+        </thead>
+        <tr>
+        {% for i in data%}
+            <td> {{i.firstname}}</td>
+            <td>{{i.lastname}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.destination}}</td>
+
+        </tr>
+        {% endfor%}
+    </table>
+
+        
+</center>
+</body>
+</html>

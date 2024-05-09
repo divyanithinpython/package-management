@@ -1,0 +1,106 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Home Page</title>
+    <link rel="stylesheet"  type="text/css" href="{%static  'style.css'%}">
+
+</head>
+<body>
+
+<header>
+        <nav>
+            <ul class="menu">
+                <li><a href="{%url 'Index'%}">Home</a></li>
+                <li> <a href="{%url 'add_package' %}">Add Packages</a></li>
+                <li> <a href= "{%url 'packagelist' %}">View Packages</a></li>
+                <li><a href="{%url 'bookinglist'%}">Booking List</a></li>
+                <li><a href="{%url 'vendor_logout'%}">Logout</a></li>
+                
+            </ul>
+
+            <center>
+                <div class="slideshow-container">
+    
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 5</div>
+                      <img src="{%static 'gal/Kashmir.jpg'%} "style="width:100%">
+                      <div class="text">Kashmir</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 5</div>
+                      
+                      <img src="{%static 'gal/Singapore.jpg'%}" style="width:100%">
+                      <div class="text">Singapore</div>
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 5</div>
+                      <img src="{%static 'gal/Thailand.jpg'%}"style="width:100%">
+                      <div class="text">Thailand</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">4/5</div>
+                        <img src="{%static 'gal/m.jpeg'%}"style="width:100%">
+                        <div class="text">Malaysia</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">5/ 5</div>
+                        <img src="{%static 'gal/tj.jpg'%}"style="width:100%">
+                        <div class="text">Agra</div>
+                     </div>
+                    
+                    </div>
+                    <br>
+                    
+                    <div style="text-align:center">
+                      <span class="dot"></span> 
+                      <span class="dot"></span> 
+                      <span class="dot"></span> 
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                    
+                    <script>
+    
+                         let slideIndex = 0;
+                          showSlides();
+                    
+                        function showSlides() {
+    
+                            let i;
+                            let slides = document.getElementsByClassName("mySlides");
+                            let dots = document.getElementsByClassName("dot");
+                            for (i = 0; i < slides.length; i++) {
+                                    slides[i].style.display = "none";  
+                              }
+                             slideIndex++;
+                            if (slideIndex > slides.length) {slideIndex = 1}    
+                             for (i = 0; i < dots.length; i++) {
+                                   dots[i].className = dots[i].className.replace(" active", "");
+                              }
+                             slides[slideIndex-1].style.display = "block";  
+                             dots[slideIndex-1].className += " active";
+                            setTimeout(showSlides, 2000); // Change image every 2 seconds
+                             }
+                     </script>
+                    
+             
+                    
+                    
+                        
+                    
+                    
+                        
+                        
+                
+    
+                
+            </center>
+            
+            
+</body>
+</html>
